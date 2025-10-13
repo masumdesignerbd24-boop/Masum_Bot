@@ -9,11 +9,13 @@ import time
 import traceback
 
 # ================== CONFIG ==================
-TELEGRAM_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"7833033071:AAH-3RtBLk6JCV66JKHmPLalAErgAsFuv0g"
-CRICKET_API_KEY  = "YOUR_CRICKET_API_KEY" va5IlHSAJTNy7o368jHuS2SYUbXSGMPFtbMzED9SDtnoTd0b3rNhAI42IF2s"  # e.g. CricAPI / CricketData key
-WEATHER_API_KEY  = "YOUR_OPENWEATHER_API_KEY"b6907d289e10d714a6e88b30761fae22"
+# ================== CONFIG ==================
+TELEGRAM_TOKEN = "7833033071:AAH-3RtBLk6JCV66JKHmPLalAErgAsFuv0g"
+CRICKET_API_KEY  = "va5IlHSAJTNy7o368jHuS2SYUbXSGMPFtbMzED9SDtnoTd0b3rNhAI42IF2s"
+WEATHER_API_KEY  = "b6907d289e10d714a6e88b30761fae22"
 POLL_INTERVAL    = 30   # seconds between polling the cricket API for updates
 DATABASE_FILE    = "bot_data.sqlite"
+# =======================
 # ============================================
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
@@ -345,4 +347,5 @@ if __name__ == "__main__":
     t = threading.Thread(target=poller_worker, daemon=True)
     t.start()
     print("Bot is running...")
+
     bot.infinity_polling()
